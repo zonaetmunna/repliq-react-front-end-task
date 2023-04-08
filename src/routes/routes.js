@@ -13,6 +13,7 @@ import Cart from "../view/pages/main/Cart";
 import Checkout from "../view/pages/main/Checkout";
 import Error from "../view/layout/Error";
 import CustomerAdd from "../view/pages/dashboard/CustomerAdd";
+import PrivateRoute from "./PrivateRoute";
 
 const routes = createBrowserRouter([
   {
@@ -48,7 +49,11 @@ const routes = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <Dashboards />,
+    element: (
+      <PrivateRoute>
+        <Dashboards />
+      </PrivateRoute>
+    ),
     children: [
       {
         path: "/dashboard",

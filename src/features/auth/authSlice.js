@@ -4,6 +4,7 @@ import axios from "axios";
 const initialState = {
   user: { number: "", role: "" },
   status: "idle",
+  isLoading: false,
   error: null,
 };
 

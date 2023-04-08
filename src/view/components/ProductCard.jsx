@@ -2,12 +2,11 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, Link as div, useLocation } from "react-router-dom";
 import { addToCart } from "../../features/cart/cartSlice";
+import { FaShoppingCart } from "react-icons/fa";
 
 const ProductCard = ({ product }) => {
   const dispatch = useDispatch();
   const { pathname } = useLocation();
-  const { cart } = useSelector((state) => state.cart);
-  console.log(cart);
 
   // handle add product cart
   const handleAddProductCart = (product) => {
@@ -17,7 +16,7 @@ const ProductCard = ({ product }) => {
   return (
     <div className="p-4 ">
       <div>
-        <div className="h-full border-2 border-gray-200 rounded-lg overflow-hidden">
+        <div className="max-w-sm mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
           <img
             className="lg:h-48 md:h-36 w-full object-cover object-center"
             src={product.image}
@@ -33,25 +32,23 @@ const ProductCard = ({ product }) => {
               <span className="text-green-500 inline-flex items-center md:mb-2 lg:mb-0">
                 ${product.price}
               </span>
-              <button
-                onClick={() => handleAddProductCart(product)}
-                className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"
+              <Link
+                to={`/product/${product.id}`}
+                className="text-indigo-600 hover:underline mx-4"
               >
-                Add to cart
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  className="w-4 h-4 ml-1"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M5 12h14M12 5l7 7-7 7"></path>
-                </svg>
-              </button>
+                Details
+              </Link>
             </div>
-            <Link to={`/product/${product.id}`}>Details</Link>
+            <button
+              onClick={() => handleAddProductCart(product)}
+              className="ml-4 inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            >
+              Add to cart
+              <FaShoppingCart
+                className="-ml-1 mr-2 h-5 w-5"
+                aria-hidden="true"
+              />
+            </button>
           </div>
         </div>
       </div>
