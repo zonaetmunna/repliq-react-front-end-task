@@ -71,12 +71,7 @@ const Navbar = () => {
             >
               Home
             </Link>
-            <Link
-              to="/"
-              className="px-3 py-2 rounded-md text-sm font-medium text-gray-500 hover:text-gray-600 hover:bg-gray-100"
-            >
-              Shop
-            </Link>
+
             <Link
               to="cart"
               className="px-3 py-2 rounded-md text-sm font-medium text-gray-500 hover:text-gray-600 hover:bg-gray-100"

@@ -1,20 +1,73 @@
-[  
-    {    
-        "id": 1,    
-        "name": "Product 1",    
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",    
-        "price": 9.99  
-    },
-    {    
-        "id": 2,    
-        "name": "Product 2",    
-        "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",    
-        "price": 19.99 
-     },
-    {    
-        "id": 3,    
-        "name": "Product 3",   
-         "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",    
-         "price": 29.99  
-    }
+[
+  {
+    "id":"1",
+    "name": "AMD Ryzen 5 5600X Gaming PC",
+    "image": "https://live.staticflickr.com/65535/52522584794_4a9898a992_o.jpg",
+    "status": true,
+    "price":34,
+    "description":"AMD Ryzen 7 5800X3D Processor,ASROCK B550 STEEL LEGEND AMDB550 Chipset Motherboard,32GB DDR4 RAM + 500GB PCIe 3.0 NVMe SSDColorful GeForce RTX 4090 NB EX-V 24GB GDDR6X Graphics Card"
+     
+  },
+  {
+    
+    "id":"2",
+    "name": "Intel 10th Gen Core i3-10100 Gaming PC",
+    "image": "https://live.staticflickr.com/65535/52521844202_dd853335c9_o.jpg",
+    "status": true,
+    "price":65,
+   "description":"AMD Ryzen 7 5800X3D Processor,ASROCK B550 STEEL LEGEND AMDB550 Chipset Motherboard,32GB DDR4 RAM + 500GB PCIe 3.0 NVMe SSDColorful GeForce RTX 4090 NB EX-V 24GB GDDR6X Graphics Card"
+  },
+  
+  {
+    "id":"3",
+    "name": "AMD Ryzen 5 3600 Gaming PC",
+    "image": "https://live.staticflickr.com/65535/52522855818_98bdd4c07a_o.jpg",
+    "status": true,
+    "price":65,
+    "description":"AMD Ryzen 7 5800X3D Processor,ASROCK B550 STEEL LEGEND AMDB550 Chipset Motherboard,32GB DDR4 RAM + 500GB PCIe 3.0 NVMe SSDColorful GeForce RTX 4090 NB EX-V 24GB GDDR6X Graphics Card"
+  },
+  {
+    "id":"4",
+    "name": "Gaming PC 10th Gen Core i5-10400f",
+    "image": "https://live.staticflickr.com/65535/52522584684_9fa14a3332_o.jpg",
+    "status": true,
+    "price":54,
+    "description":"AMD Ryzen 7 5800X3D Processor,ASROCK B550 STEEL LEGEND AMDB550 Chipset Motherboard,32GB DDR4 RAM + 500GB PCIe 3.0 NVMe SSDColorful GeForce RTX 4090 NB EX-V 24GB GDDR6X Graphics Card"
+  },
+  {
+    "id":"5",
+    "name": "Intel 10th Gen Core i7-10700 Gaming PC",
+    "image": "https://live.staticflickr.com/65535/52522308736_8453894269_o.jpg",
+    "status": true,
+    "price":77,
+    "description":"AMD Ryzen 7 5800X3D Processor,ASROCK B550 STEEL LEGEND AMDB550 Chipset Motherboard,32GB DDR4 RAM + 500GB PCIe 3.0 NVMe SSDColorful GeForce RTX 4090 NB EX-V 24GB GDDR6X Graphics Card"
+  },
+  {
+    "id":"6",
+    "name": "Intel Core i5-11400 11th Gen Gaming PC",
+    "image": "https://live.staticflickr.com/65535/52522308721_4f2de69503_o.jpg",
+    "status": true,
+    "price":23,
+    "description":"AMD Ryzen 7 5800X3D Processor,ASROCK B550 STEEL LEGEND AMDB550 Chipset Motherboard,32GB DDR4 RAM + 500GB PCIe 3.0 NVMe SSDColorful GeForce RTX 4090 NB EX-V 24GB GDDR6X Graphics Card"
+     
+  },
+  {
+    "id":"7",
+    "name": "Intel 11th Gen Core i5-11400f Gaming PC",
+    "image": "https://live.staticflickr.com/65535/52522855818_98bdd4c07a_o.jpg",
+    "status": true,
+    "price":76,
+    "description":"AMD Ryzen 7 5800X3D Processor,ASROCK B550 STEEL LEGEND AMDB550 Chipset Motherboard,32GB DDR4 RAM + 500GB PCIe 3.0 NVMe SSDColorful GeForce RTX 4090 NB EX-V 24GB GDDR6X Graphics Card"
+    
+  },
+  {
+    "id":"8",
+    "name": "AMD Ryzen 7 5800X3D Gaming PC",
+    "image": "https://live.staticflickr.com/65535/52521844332_5f738162d8_o.jpg",
+    "status": true,
+    "price":98,
+    "description":"AMD Ryzen 7 5800X3D Processor,ASROCK B550 STEEL LEGEND AMDB550 Chipset Motherboard,32GB DDR4 RAM + 500GB PCIe 3.0 NVMe SSDColorful GeForce RTX 4090 NB EX-V 24GB GDDR6X Graphics Card"
+    
+    
+  }
 ]
