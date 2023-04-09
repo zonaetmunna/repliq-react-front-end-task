@@ -60,17 +60,17 @@ const authSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(signup.pending, (state) => {
-        state.status = "loading";
-      })
-      .addCase(signup.fulfilled, (state, action) => {
-        state.status = "succeeded";
-        state.user = action.payload;
-      })
-      .addCase(signup.rejected, (state, action) => {
-        state.status = "failed";
-        state.error = action.error.message;
-      })
+      // .addCase(signup.pending, (state) => {
+      //   state.status = "loading";
+      // })
+      // .addCase(signup.fulfilled, (state, action) => {
+      //   state.status = "succeeded";
+      //   state.user = action.payload;
+      // })
+      // .addCase(signup.rejected, (state, action) => {
+      //   state.status = "failed";
+      //   state.error = action.error.message;
+      // })
       // Handle the login pending state
       .addCase(login.pending, (state) => {
         state.status = "loading";

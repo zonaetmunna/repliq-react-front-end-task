@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../view/layout/Main";
 import Home from "../view/pages/main/Home";
 import Login from "../view/pages/main/Login";
-import SignUp from "../view/pages/main/SignUp";
+import Register from "../view/pages/main/Register";
 import Dashboards from "../view/layout/Dashboards";
 import AdminDashboard from "../view/pages/dashboard/AdminDashboard";
 import CustomersList from "../view/pages/dashboard/CustomersList";
@@ -14,6 +14,7 @@ import Checkout from "../view/pages/main/Checkout";
 import Error from "../view/layout/Error";
 import CustomerAdd from "../view/pages/dashboard/CustomerAdd";
 import PrivateRoute from "./PrivateRoute";
+import AddProduct from "../view/pages/dashboard/AddProduct";
 
 const routes = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const routes = createBrowserRouter([
     children: [
       {
         path: "/",
+        element: <Login />,
+      },
+      {
+        path: "/home",
         element: <Home />,
       },
       {
@@ -35,15 +40,16 @@ const routes = createBrowserRouter([
       },
       {
         path: "checkout",
-        element: <Checkout />,
+        element: (
+          <PrivateRoute>
+            <Checkout />
+          </PrivateRoute>
+        ),
       },
+
       {
-        path: "/login",
-        element: <Login />,
-      },
-      {
-        path: "/signup",
-        element: <SignUp />,
+        path: "/register",
+        element: <Register />,
       },
     ],
   },
@@ -67,6 +73,11 @@ const routes = createBrowserRouter([
         path: "customer-add",
         element: <CustomerAdd />,
       },
+      {
+        path: "product-add",
+        element: <AddProduct />,
+      },
+
       {
         path: "product-list",
         element: <ProductList />,

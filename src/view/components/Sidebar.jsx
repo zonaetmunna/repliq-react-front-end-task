@@ -14,7 +14,7 @@ const Sidebar = () => {
           </Link>
         </li>
         <li className="text-center font-normal text-gray-900 rounded-lg hover:bg-gray-100">
-          <Link to="addProduct"> Add-Product </Link>
+          <Link to="product-add"> Add-Product </Link>
         </li>
         <li className="text-center font-normal text-gray-900 rounded-lg hover:bg-gray-100">
           <Link to="customer-list"> Customer-list </Link>

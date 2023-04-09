@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { signup } from "../../../features/auth/authSlice";
 
-const SignUp = () => {
+const Register = () => {
   const { user, isLoading, isError, error } = useSelector(
     (state) => state.auth
   );
@@ -161,4 +161,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default Register;

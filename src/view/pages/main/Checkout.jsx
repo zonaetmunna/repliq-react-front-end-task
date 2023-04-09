@@ -34,7 +34,6 @@ const Checkout = () => {
     let orders = JSON.parse(localStorage.getItem("orders")) || [];
     const newOrder = {
       number: user.number,
-
       total: total,
     };
     orders.push(newOrder);
