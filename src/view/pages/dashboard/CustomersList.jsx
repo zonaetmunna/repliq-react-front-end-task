@@ -39,7 +39,10 @@ const CustomersList = () => {
               type="number"
               name="number"
               id="number"
-              {...register("number", { required: true })}
+              {...register("number", {
+                required: true,
+                pattern: /^01[3-9][0-9]{8}$/,
+              })}
               className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
             />
             {errors.number && (

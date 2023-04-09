@@ -12,7 +12,6 @@ import SingleProduct from "../view/pages/main/SingleProduct";
 import Cart from "../view/pages/main/Cart";
 import Checkout from "../view/pages/main/Checkout";
 import Error from "../view/layout/Error";
-import CustomerAdd from "../view/pages/dashboard/CustomerAdd";
 import PrivateRoute from "./PrivateRoute";
 import AddProduct from "../view/pages/dashboard/AddProduct";
 import AdminRoute from "./AdminRoute";
@@ -74,10 +73,7 @@ const routes = createBrowserRouter([
         path: "customer-list",
         element: <CustomersList />,
       },
-      {
-        path: "customer-add",
-        element: <CustomerAdd />,
-      },
+
       {
         path: "product-add",
         element: <AddProduct />,
