@@ -18,19 +18,10 @@ const Checkout = () => {
   const total = cart.reduce((acc, crr) => acc + crr.price, 0);
 
   const onSubmit = (data) => {
-    /* const orderData = {
-      firstName: data.first_name,
-      lastName: data.last_name,
-      email: data.email,
-      number: user.number,
-
-      total: total,
-    };
     console.log(data);
-    localStorage.setItem("order", JSON.stringify(orderData)); */
   };
 
-  const handleCheckout = () => {
+  const handleCheckout = (data) => {
     let orders = JSON.parse(localStorage.getItem("orders")) || [];
     const newOrder = {
       number: user.number,

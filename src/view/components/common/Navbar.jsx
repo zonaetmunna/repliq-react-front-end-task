@@ -88,6 +88,14 @@ const Navbar = () => {
                 Dashboard
               </Link>
             )}
+            {user.role === "admin" && (
+              <Link
+                to="/register"
+                className="px-3 py-2 rounded-md text-sm font-medium text-gray-500 hover:text-gray-600 hover:bg-gray-100"
+              >
+                Register
+              </Link>
+            )}
             {user.number ? (
               <button onClick={handleSignOut}>logout</button>
             ) : (

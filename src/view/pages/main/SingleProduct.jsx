@@ -10,7 +10,7 @@ const SingleProduct = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    /* const fetchProduct = async () => {
+    const fetchProduct = async () => {
       try {
         const response = await axios.get(`/products.json`);
         const data = response.data;
@@ -21,22 +21,13 @@ const SingleProduct = () => {
       }
     };
 
-    fetchProduct(); */
-    const products = JSON.parse(localStorage.getItem("products")) || [];
-    const selectedProduct = products.find(
-      (product) => product.id === Number(id)
-    );
-    setProduct(selectedProduct);
+    fetchProduct();
   }, [id]);
   console.log(products);
 
   const handleAddProductCart = (product) => {
     dispatch(addToCart(product));
   };
-
-  if (!products) {
-    return <div>Loading...</div>;
-  }
 
   return (
     <div className="bg-gray-50">

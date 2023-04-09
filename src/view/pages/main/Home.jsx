@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import ProductCard from "../../components/ProductCard";
 
 const Home = () => {
-  /* const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
@@ -12,8 +12,7 @@ const Home = () => {
     }
 
     fetchData();
-  }, []); */
-  const products = JSON.parse(localStorage.getItem("products")) || [];
+  }, []);
 
   return (
     <>

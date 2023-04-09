@@ -15,6 +15,7 @@ import Error from "../view/layout/Error";
 import CustomerAdd from "../view/pages/dashboard/CustomerAdd";
 import PrivateRoute from "./PrivateRoute";
 import AddProduct from "../view/pages/dashboard/AddProduct";
+import AdminRoute from "./AdminRoute";
 
 const routes = createBrowserRouter([
   {
@@ -49,7 +50,11 @@ const routes = createBrowserRouter([
 
       {
         path: "/register",
-        element: <Register />,
+        element: (
+          <AdminRoute>
+            <Register />
+          </AdminRoute>
+        ),
       },
     ],
   },
