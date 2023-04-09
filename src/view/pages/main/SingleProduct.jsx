@@ -10,7 +10,7 @@ const SingleProduct = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const fetchProduct = async () => {
+    /* const fetchProduct = async () => {
       try {
         const response = await axios.get(`/products.json`);
         const data = response.data;
@@ -21,7 +21,12 @@ const SingleProduct = () => {
       }
     };
 
-    fetchProduct();
+    fetchProduct(); */
+    const products = JSON.parse(localStorage.getItem("products")) || [];
+    const selectedProduct = products.find(
+      (product) => product.id === Number(id)
+    );
+    setProduct(selectedProduct);
   }, [id]);
   console.log(products);
 

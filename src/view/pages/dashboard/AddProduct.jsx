@@ -2,117 +2,103 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
 const AddProduct = () => {
-  const { register, handleSubmit, reset } = useForm();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
   const [product, setProductList] = useState(
     JSON.parse(localStorage.getItem("products")) || []
   );
 
   const onSubmit = (data) => {
+    const products = JSON.parse(localStorage.getItem("products")) || [];
     const newProduct = {
-      id: new Date().getTime(),
-      ...data,
+      id: Math.floor(Math.random() * 10000), // Generate a random ID
+      ...data, // Spread the rest of the data (name, image, description, price)
     };
-    setProductList([...product, newProduct]);
-    localStorage.setItem("productList", JSON.stringify(product));
+    products.push(newProduct);
+    localStorage.setItem("products", JSON.stringify(products));
+
     reset();
   };
   return (
-    <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+    <div className="container mx-auto py-4">
+      <h1 className="text-2xl font-bold mb-4">Add Product</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="shadow overflow-hidden sm:rounded-md">
-          <div className="px-4 py-5 bg-white sm:p-6">
-            <div className="grid grid-cols-6 gap-6">
-              <div className="col-span-6 sm:col-span-3">
-                <label
-                  htmlFor="id"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  ID
-                </label>
-                <input
-                  type="number"
-                  name="id"
-                  id="id"
-                  {...register("id", { required: true })}
-                  className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                />
-              </div>
-
-              <div className="col-span-6 sm:col-span-3">
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Name
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  autoComplete="given-name"
-                  {...register("name", { required: true })}
-                  className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                />
-              </div>
-              <div className="col-span-6 sm:col-span-3">
-                <label
-                  htmlFor="image"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Image
-                </label>
-                <input
-                  type="file"
-                  name="image"
-                  id="image"
-                  accept="image/*"
-                  {...register("image", { required: true })}
-                  className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                />
-              </div>
-
-              <div className="col-span-6 sm:col-span-3">
-                <label
-                  htmlFor="description"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Description
-                </label>
-                <input
-                  type="text"
-                  name="description"
-                  id="description"
-                  autoComplete="given-name"
-                  {...register("description", { required: true })}
-                  className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                />
-              </div>
-
-              <div className="col-span-6 sm:col-span-3">
-                <label
-                  htmlFor="price"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Price
-                </label>
-                <input
-                  type="number"
-                  name="price"
-                  id="price"
-                  {...register("price", { required: true })}
-                  className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                />
-              </div>
-            </div>
-          </div>
-          <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
-            <button
-              type="submit"
-              className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-            >
-              add
-            </button>
-          </div>
+        <div className="mb-4">
+          <label htmlFor="name" className="block text-gray-700 font-bold mb-2">
+            Name
+          </label>
+          <input
+            {...register("name", { required: true })}
+            type="text"
+            name="name"
+            id="name"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          />
+          {errors.name && (
+            <span className="text-red-500">This field is required</span>
+          )}
+        </div>
+        <div className="mb-4">
+          <label htmlFor="image" className="block text-gray-700 font-bold mb-2">
+            Image URL
+          </label>
+          <input
+            {...register("image", { required: true })}
+            type="text"
+            name="image"
+            id="image"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          />
+          {errors.image && (
+            <span className="text-red-500">This field is required</span>
+          )}
+        </div>
+        <div className="mb-4">
+          <label
+            htmlFor="description"
+            className="block text-gray-700 font-bold mb-2"
+          >
+            Description
+          </label>
+          <textarea
+            {...register("description", { required: true })}
+            name="description"
+            id="description"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          ></textarea>
+          {errors.description && (
+            <span className="text-red-500">This field is required</span>
+          )}
+        </div>
+        <div className="mb-4">
+          <label htmlFor="price" className="block text-gray-700 font-bold mb-2">
+            Price
+          </label>
+          <input
+            {...register("price", { required: true, pattern: /^[0-9]*$/ })}
+            type="text"
+            name="price"
+            id="price"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          />
+          {errors.price?.type === "required" && (
+            <span className="text-red-500">This field is required</span>
+          )}
+          {errors.price?.type === "pattern" && (
+            <span className="text-red-500">Please enter a valid price</span>
+          )}
+        </div>
+        <div className="flex items-center justify-between">
+          <button
+            type="submit"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          >
+            Add
+          </button>
         </div>
       </form>
     </div>
